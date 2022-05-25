@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Przelicznik walut</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<main class="main">
+			<h1>Przelicznik walut</h1>
+			<div class="main-container">
+				<form>
+					<input
+						type="number"
+						placeholder="Kwota"
+						class="amount-input"
+						id="amount-input"
+						required
+					/>
+					<select>
+						<option disabled="" selected="">Wybierz walutę</option>
+						<option value="EURO" id="euro-opt">EURO</option>
+						<option value="USD" id="usd-opt">USD</option>
+						<option value="FRANK" id="frank-opt">FRANK</option>
+					</select>
+					<input
+						type="submit"
+						value="Przelicz"
+						class="submit-btn"
+						id="submit-btn"
+					/>
+					<span></span>
+				</form>
+			</div>
+			<hr />
+		</main>
+		<script src="script.js"></script>
+	</body>
+</html>
