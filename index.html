@@ -5,13 +5,19 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Przelicznik walut</title>
+		<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
 		<link rel="stylesheet" href="style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@400;600;700&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
 		<main class="main">
 			<h1>Przelicznik walut</h1>
 			<div class="main-container">
-				<form>
+				<img src="first-part.png" class="portal-parts portal-part-first" />
+				<form class="test">
 					<input
 						type="number"
 						placeholder="Kwota"
@@ -19,11 +25,8 @@
 						id="amount-input"
 						required
 					/>
-					<select>
+					<select id="select-dom">
 						<option disabled="" selected="">Wybierz walutę</option>
-						<option value="EURO" id="euro-opt">EURO</option>
-						<option value="USD" id="usd-opt">USD</option>
-						<option value="FRANK" id="frank-opt">FRANK</option>
 					</select>
 					<input
 						type="submit"
@@ -31,10 +34,11 @@
 						class="submit-btn"
 						id="submit-btn"
 					/>
-					<span></span>
 				</form>
+				<img src="second-part.png" class="portal-parts portal-part-two" />
 			</div>
-			<hr />
+			<span class="answer">aaa</span>
+			<img src="whetlie.png" alt="whetlie" class="whetlie-img" />
 		</main>
 		<script src="script.js"></script>
 	</body>

@@ -9,6 +9,7 @@
 body {
 	height: 100%;
 	transition: 0.4s ease-in-out;
+	font-family: "Spline Sans Mono";
 }
 
 html {
@@ -16,6 +17,8 @@ html {
 	scroll-behavior: smooth;
 }
 
+option,
+select,
 input,
 button {
 	border: none;
@@ -25,6 +28,8 @@ button {
 
 h1 {
 	font-size: 4rem;
+	color: aliceblue;
+	text-align: center;
 }
 
 .main {
@@ -34,24 +39,53 @@ h1 {
 	height: 100vh;
 	justify-content: space-around;
 	align-items: center;
+	background: url("background.jpg");
+	background-position: center;
+	background-size: cover;
 }
 
 .main-container {
 	display: flex;
 	flex-direction: row;
 	width: 75%;
+	max-width: 400px;
 	justify-content: space-around;
+	align-items: flex-end;
+}
+
+.portal-parts {
+	height: 225px;
+	margin: 0 1rem;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 2rem;
 }
 
 select,
 .amount-input {
-	padding: 1rem;
-	font-size: 1.5rem;
+	padding: 2rem;
+	font-size: 1.75rem;
 	background-color: gold;
 }
 
 .submit-btn {
 	font-size: 1.75rem;
-	padding: 1rem;
+	padding: 2rem;
 	background-color: gold;
+}
+
+.answer {
+	font-size: 2.5rem;
+	color: aliceblue;
+}
+
+.whetlie-img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 200px;
 }
