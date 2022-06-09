@@ -5,17 +5,17 @@ const submitBtn = document.querySelector("#submit-btn");
 const main = document.querySelector("main");
 const wheatleyImg = document.querySelector(".wheatley-img");
 
-let span = document.querySelector("span");
+const resultSpanDOM = document.querySelector(".answer");
 
 wheatleyImg.addEventListener("mouseover", () => {
-	const cloud = document.createElement("span");
-	cloud.setAttribute("class", "cloud");
-	cloud.innerText =
+	const cloudMsg = document.createElement("span");
+	cloudMsg.setAttribute("class", "cloud");
+	cloudMsg.innerText =
 		"Hej! Jestem Wheatley, tą stronę stworzył Damian J. Inspirował się grą Portal 2, a więc uważaj na GLaDOS!";
-	main.appendChild(cloud);
+	main.appendChild(cloudMsg);
 
 	const counter = () => {
-		main.removeChild(cloud);
+		main.removeChild(cloudMsg);
 	};
 	setTimeout(counter, 6000);
 });
@@ -26,7 +26,11 @@ function getCurrencyList() {
 			return response.json();
 		})
 		.then((data) => {
-			let currencies = data.rates;
+			console.log(data[0].rates);
+			console.log(data[0].rates[0].code);
+			console.log(data[0].rates[0].mid);
+			let mid = data[0].rates[0].mid;
+			let currencies = data[0].rates[0].code;
 
 			selectDOM.addEventListener("change", (event) => {
 				// body.appendChild(h1);
@@ -34,23 +38,30 @@ function getCurrencyList() {
 				// 	currencies[event.target.value]
 				// } zł`;
 				console.log(event.target.value);
+				console.log(currencies[event.target.value]);
 			});
-			Object.keys(data.rates).forEach((element) => {
+
+			Object.keys(currencies).forEach((element) => {
 				let option = document.createElement("option");
 				option.textContent = element;
 				selectDOM.appendChild(option);
 			});
+
+			function exchangeCurrency(e) {
+				e.preventDefault();
+				if (amountInput.value > 0) {
+					document.getElementById("play1").play();
+					let currencyAmount = amountInput.value;
+					console.log(currencyAmount);
+
+					let result = currencyAmount * mid;
+					console.log(result);
+					resultSpanDOM.innerText = result + " PLN";
+				} else {
+					document.getElementById("play2").play();
+				}
+			}
+			submitBtn.addEventListener("click", exchangeCurrency);
 		});
 }
 getCurrencyList();
-
-function exchange(e) {
-	e.preventDefault();
-	if (amountInput.value > 0) {
-		document.getElementById("play1").play();
-	} else {
-		document.getElementById("play2").play();
-	}
-}
-
-submitBtn.addEventListener("click", exchange);

@@ -80,8 +80,12 @@ select,
 }
 
 .answer {
-	font-size: 2.5rem;
-	color: aliceblue;
+	font-size: 4rem;
+	padding: 7.75rem;
+	color: rgb(146, 174, 198);
+	background-color: transparent;
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
 }
 
 .wheatley-img {
