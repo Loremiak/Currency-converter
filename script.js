@@ -26,42 +26,35 @@ function getCurrencyList() {
 			return response.json();
 		})
 		.then((data) => {
-			console.log(data[0].rates);
-			console.log(data[0].rates[0].code);
-			console.log(data[0].rates[0].mid);
-			let mid = data[0].rates[0].mid;
-			let currencies = data[0].rates[0].code;
+			let currencies = ["EUR", "USD", "CHF"];
 
 			selectDOM.addEventListener("change", (event) => {
-				// body.appendChild(h1);
-				// h1.innerText = `Wybrałeś ${event.target.value} o wartości ${
-				// 	currencies[event.target.value]
-				// } zł`;
-				console.log(event.target.value);
-				console.log(currencies[event.target.value]);
+				let actualName = event.target.value;
+				let chooseCurrency = data[0].rates.filter((rate) => {
+					return rate.code === actualName;
+				});
+				let actualRate = chooseCurrency[0].mid;
+
+				function exchangeCurrency(e) {
+					e.preventDefault();
+					if (amountInput.value > 0) {
+						document.getElementById("play1").play();
+						let currencyAmount = amountInput.value;
+
+						let result = currencyAmount * actualRate;
+						resultSpanDOM.innerText = result + " PLN";
+					} else {
+						document.getElementById("play2").play();
+					}
+				}
+				submitBtn.addEventListener("click", exchangeCurrency);
 			});
 
-			Object.keys(currencies).forEach((element) => {
+			currencies.forEach((element) => {
 				let option = document.createElement("option");
 				option.textContent = element;
 				selectDOM.appendChild(option);
 			});
-
-			function exchangeCurrency(e) {
-				e.preventDefault();
-				if (amountInput.value > 0) {
-					document.getElementById("play1").play();
-					let currencyAmount = amountInput.value;
-					console.log(currencyAmount);
-
-					let result = currencyAmount * mid;
-					console.log(result);
-					resultSpanDOM.innerText = result + " PLN";
-				} else {
-					document.getElementById("play2").play();
-				}
-			}
-			submitBtn.addEventListener("click", exchangeCurrency);
 		});
 }
 getCurrencyList();

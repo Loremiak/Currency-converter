@@ -27,6 +27,10 @@ button {
 	font-family: inherit;
 }
 
+option {
+	width: 80%;
+}
+
 h1 {
 	font-size: 4rem;
 	color: aliceblue;
@@ -81,7 +85,7 @@ select,
 
 .answer {
 	font-size: 4rem;
-	padding: 7.75rem;
+	padding: 5rem 25%;
 	color: rgb(146, 174, 198);
 	background-color: transparent;
 	-webkit-backdrop-filter: blur(20px);
