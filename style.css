@@ -33,8 +33,9 @@ option {
 
 h1 {
 	font-size: 4rem;
-	color: aliceblue;
+	color: #00a2ff;
 	text-align: center;
+	text-shadow: 0px 0px 4px rgb(0, 0, 0);
 }
 
 .main {
@@ -85,11 +86,13 @@ select,
 
 .answer {
 	font-size: 4rem;
-	padding: 5rem 25%;
-	color: rgb(146, 174, 198);
+	font-weight: bolder;
+	padding: 2rem 3rem;
+	color: #ff5d00;
 	background-color: transparent;
 	-webkit-backdrop-filter: blur(20px);
 	backdrop-filter: blur(20px);
+	text-shadow: 0px 0px 4px rgb(0, 0, 0);
 }
 
 .wheatley-img {
@@ -104,12 +107,14 @@ select,
 	position: absolute;
 	left: 200px;
 	top: 50px;
-	background-color: aliceblue;
+	background-color: #0065ff;
+	color: aliceblue;
 	font-size: 1.75rem;
 	padding: 2rem;
 	width: 350px;
 	opacity: 0.75;
 }
+
 .cloud::after {
 	content: "";
 	position: absolute;
@@ -117,14 +122,6 @@ select,
 	height: 20px;
 	top: 40px;
 	left: -10px;
-	background-color: aliceblue;
+	background-color: #0065ff;
 	transform: rotate(45deg);
 }
-
-/* .testimg {
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	z-index: 0;
-	height: 75%;
-} */

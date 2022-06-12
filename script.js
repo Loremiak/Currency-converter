@@ -40,9 +40,13 @@ function getCurrencyList() {
 					if (amountInput.value > 0) {
 						document.getElementById("play1").play();
 						let currencyAmount = amountInput.value;
-
 						let result = currencyAmount * actualRate;
-						resultSpanDOM.innerText = result + " PLN";
+
+						function roundToTwo(num) {
+							return +(Math.round(num + "e+2") + "e-2");
+						}
+
+						resultSpanDOM.innerText = roundToTwo(result) + " PLN";
 					} else {
 						document.getElementById("play2").play();
 					}
