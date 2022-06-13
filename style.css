@@ -60,7 +60,7 @@ h1 {
 }
 
 .portal-parts {
-	height: 225px;
+	height: 115px;
 	margin: 0 1rem;
 }
 
@@ -68,19 +68,14 @@ form {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: 2rem;
+	gap: 1rem;
 }
 
 select,
-.amount-input {
-	padding: 2rem;
-	font-size: 1.75rem;
-	background-color: gold;
-}
-
+.amount-input,
 .submit-btn {
-	font-size: 1.75rem;
-	padding: 2rem;
+	padding: 0.75rem;
+	font-size: 1.25rem;
 	background-color: gold;
 }
 
@@ -95,33 +90,37 @@ select,
 	text-shadow: 0px 0px 4px rgb(0, 0, 0);
 }
 
-.wheatley-img {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 200px;
-	z-index: 1;
+@media screen and (min-width: 376px) {
+	.portal-parts {
+		height: 135px;
+	}
+
+	select,
+	.amount-input,
+	.submit-btn {
+		padding: 1rem;
+		font-size: 1.5rem;
+	}
 }
 
-.cloud {
-	position: absolute;
-	left: 200px;
-	top: 50px;
-	background-color: #0065ff;
-	color: aliceblue;
-	font-size: 1.75rem;
-	padding: 2rem;
-	width: 350px;
-	opacity: 0.75;
-}
+@media screen and (min-width: 776px) {
+	.portal-parts {
+		height: 175px;
+	}
 
-.cloud::after {
-	content: "";
-	position: absolute;
-	width: 20px;
-	height: 20px;
-	top: 40px;
-	left: -10px;
-	background-color: #0065ff;
-	transform: rotate(45deg);
+	select,
+	.amount-input,
+	.submit-btn {
+		padding: 1.5rem;
+		font-size: 1.75rem;
+		transition: all 0.3s ease-in-out;
+	}
+	select:hover,
+	.amount-input:hover,
+	.submit-btn:hover {
+		background-color: goldenrod;
+		outline: none;
+		border-color: gold;
+		box-shadow: 0 0 10px gold;
+	}
 }

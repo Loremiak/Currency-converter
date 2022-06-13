@@ -3,22 +3,8 @@ const selectDOM = document.querySelector("#select-dom");
 const submitBtn = document.querySelector("#submit-btn");
 
 const main = document.querySelector("main");
-const wheatleyImg = document.querySelector(".wheatley-img");
 
 const resultSpanDOM = document.querySelector(".answer");
-
-wheatleyImg.addEventListener("mouseover", () => {
-	const cloudMsg = document.createElement("span");
-	cloudMsg.setAttribute("class", "cloud");
-	cloudMsg.innerText =
-		"Hej! Jestem Wheatley, tą stronę stworzył Damian J. Inspirował się grą Portal 2, a więc uważaj na GLaDOS!";
-	main.appendChild(cloudMsg);
-
-	const counter = () => {
-		main.removeChild(cloudMsg);
-	};
-	setTimeout(counter, 6000);
-});
 
 function getCurrencyList() {
 	fetch("http://api.nbp.pl/api/exchangerates/tables/a/")
