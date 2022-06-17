@@ -8,7 +8,6 @@
 
 body {
 	height: 100%;
-	transition: 0.4s ease-in-out;
 	font-family: "Spline Sans Mono";
 	transition: all 0.3s ease-in-out;
 }
@@ -88,6 +87,7 @@ select,
 	-webkit-backdrop-filter: blur(20px);
 	backdrop-filter: blur(20px);
 	text-shadow: 0px 0px 4px rgb(0, 0, 0);
+	text-align: center;
 }
 
 @media screen and (min-width: 376px) {

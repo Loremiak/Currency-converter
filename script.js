@@ -1,9 +1,6 @@
 const amountInput = document.querySelector("#amount-input");
 const selectDOM = document.querySelector("#select-dom");
 const submitBtn = document.querySelector("#submit-btn");
-
-const main = document.querySelector("main");
-
 const resultSpanDOM = document.querySelector(".answer");
 
 function getCurrencyList() {
@@ -21,25 +18,21 @@ function getCurrencyList() {
 				});
 				let actualRate = chooseCurrency[0].mid;
 
+				function getRoundToTwo(num) {
+					return +(Math.round(num + "e+2") + "e-2");
+				}
+
 				function exchangeCurrency(e) {
 					e.preventDefault();
 					if (amountInput.value > 0) {
-						document.getElementById("play1").play();
+						document.getElementById("play").play();
 						let currencyAmount = amountInput.value;
 						let result = currencyAmount * actualRate;
-
-						function roundToTwo(num) {
-							return +(Math.round(num + "e+2") + "e-2");
-						}
-
-						resultSpanDOM.innerText = roundToTwo(result) + " PLN";
-					} else {
-						document.getElementById("play2").play();
+						resultSpanDOM.innerText = getRoundToTwo(result) + " PLN";
 					}
 				}
 				submitBtn.addEventListener("click", exchangeCurrency);
 			});
-
 			currencies.forEach((element) => {
 				let option = document.createElement("option");
 				option.textContent = element;
