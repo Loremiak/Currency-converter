@@ -38,6 +38,7 @@ function getCurrencyList() {
 				option.textContent = element;
 				selectDOM.appendChild(option);
 			});
-		});
+		})
+		.catch((err) => console.log(err));
 }
 getCurrencyList();
