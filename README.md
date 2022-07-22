@@ -8,4 +8,4 @@ Project is created with:
 * JavaScript
 	
 ## Setup
-Live demo: jolly-mandazi-2d05b7.netlify.app
+Live demo: <a href="jolly-mandazi-2d05b7.netlify.app">jolly-mandazi-2d05b7.netlify.app</a>
